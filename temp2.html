@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Hyphen</title>
+</head>
+
+<body align="center">
+    <h3>Adding Hyphens after every 4th character</h3>
+    <div>
+        <input type="text" id="tbNum" onkeyup="addHyphen(this)"
+            placeholder="Type some values here" />
+    </div>
+    
+</body>
+
+<script>
+	function addHyphen (element) {
+    	let ele = document.getElementById(element.id);
+        ele = ele.value.split('-').join('');
+
+        let finalVal = ele.match(/.{1,4}/g).join('-');
+        document.getElementById(element.id).value = finalVal;
+    }
+</script>
+</html>
